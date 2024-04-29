@@ -1,17 +1,18 @@
 import { useState } from 'react'
-
+import { Router, Routes } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import Navbar from './Components/Navbar'
+import Checkout from './pages/Checkout'
 function App() {
-    const [clicked,setclicked] = useState(false)
-    
+   
   return (
-    <>
-      <div className='text-red-600 bg-black card' >
-        test sofiane
-      </div>
-      <button>click me</button>
-      <button>sofiane</button>
-    </>
-  )
-}
+    
+    <div className='App'>
+      <Navbar/>
+      <Checkout/>
+      
 
-export default App
+    </div>
+  ); }
+export default App;
+
