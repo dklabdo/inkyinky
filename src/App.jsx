@@ -10,21 +10,27 @@ import Buy from './pages/Buy'
 function App() {
    
   return (
-    
-    <div className='App'>
-      <Navbar/>
+    <>
+    <Navbar/>
+    <div className='w-full  h-screen'>
       
+      
+   
       <Routes>
         <Route path='/checkout' element={<Checkout/>} />
         <Route path='/home' element={<Home/>} />
-        <Route path='/allposters' element={<Allposters/>} />
+        <Route path='/Category' element={<Allposters/>} />
         <Route path='/buy:' element={<Buy/>} />
         <Route path='/oderpage' element={<Orderpage/>} />
         
       </Routes>
       
+      
 
     </div>
+    </>
+    
+    
   ); }
 export default App;
 

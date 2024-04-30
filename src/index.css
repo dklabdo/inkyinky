@@ -2,7 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  nav {
+    @apply  top-0 flex w-full my-12 justify-between px-20 items-center;
+  }
+  .link {
+    @apply text-base hover:font-bold hover:scale-105 transition;
+  }
+  .middle {
+    @apply flex gap-12 ;
+  }
+}
 
-:root{
-
+:root {
+    line-height: 1.2;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    scroll-behavior: smooth;
+    min-height: 6000px;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    background-image: url("./assets/bg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
 }

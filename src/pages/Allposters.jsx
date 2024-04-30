@@ -2,7 +2,9 @@ import React from 'react'
 
 function Allposters() {
   return (
-    <div>Allposters</div>
+    <div>
+      Category
+    </div>
   )
 }
 
