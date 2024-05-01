@@ -13,6 +13,7 @@ export default {
         'xs2': {'max': '540px'},
         'xs3': {'min': '540px'},
         
+        
       },
       colors : {
         'main' : "#003C43",
@@ -40,7 +41,7 @@ export default {
         },
       },
       animation:{
-        'drawera': 'drawer .4s linear '
+        'drawer': 'drawer 2s linear '
       }
     },
   },

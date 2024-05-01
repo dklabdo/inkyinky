@@ -7,11 +7,13 @@ import Home from './pages/Home'
 import Allposters from './pages/Allposters'
 import Orderpage from './pages/Orderpage'
 import Buy from './pages/Buy'
+import SideBar from './Components/SideBar'
 function App() {
    
   return (
     <>
     <Navbar/>
+    <SideBar/>
     <div className='w-full  h-screen'>
       
       

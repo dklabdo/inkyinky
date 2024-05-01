@@ -4,7 +4,7 @@
 
 @layer components {
   nav {
-    @apply  top-0 flex w-full my-12 justify-between px-20 items-center;
+    @apply  top-0 flex w-full justify-between px-4 xs3:px-12 lg:px-20 items-center;
   }
   .link {
     @apply text-base hover:font-bold hover:scale-105 transition;
@@ -12,10 +12,20 @@
   .middle {
     @apply flex gap-12 ;
   }
+  .inputContainer{
+    @apply flex flex-col  gap-3 sm:w-1/2 my-8 sm:my-0
+  }
+  .contactInput{
+    @apply h-12 bg-transparent focus:outline-none text-white focus:border-white px-2 border-b-2 border-white/50 hover:border-white
+  }
+  label{
+    @apply text-white text-base
+  }
+  
 }
 
 :root {
-    line-height: 1.2;
+    line-height: 1.6;
     font-weight: 400;
     font-family: "Work Sans", sans-serif;
     font-optical-sizing: auto;
@@ -23,9 +33,27 @@
     min-height: 6000px;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
-    background-image: url("./assets/bg.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     width: 100%;
+}
+
+
+@keyframes drawer {
+  0%{
+    right: -100%;
+  }
+  100%{
+    right: 0;
+  }
+}
+
+
+
+
+.drawerOpen{
+  animation-name: drawer;
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  
+  
+
 }
