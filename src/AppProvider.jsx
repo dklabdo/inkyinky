@@ -9,8 +9,10 @@ function AppProvider({children}) {
         console.log("test");
         setopenSideBar(!openSideBar)
     }
+
+    const [orderInfo,setorderInfo] = useState(null)
   return (
-    <AppContext.Provider value={{ControlSideBar,openSideBar}}>
+    <AppContext.Provider value={{orderInfo,setorderInfo,ControlSideBar,openSideBar}}>
         {children}
     </AppContext.Provider>
   )
