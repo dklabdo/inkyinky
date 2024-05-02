@@ -10,7 +10,7 @@ function Home() {
       <section className='w-full relative my-52 pt-20 ' id='contact'>
 
         <ContactUs/>
-        <Order/>
+        
         
         
       </section>
