@@ -5,16 +5,17 @@ import Navbar from './Components/Navbar'
 import Checkout from './pages/Checkout'
 import Home from './pages/Home'
 import Allposters from './pages/Allposters'
-import Orderpage from './pages/Orderpage'
-import Buy from './pages/Buy'
 import SideBar from './Components/SideBar'
+import Footer from './Components/Footer'
+import Order from './pages/Order'
+import Admin from './pages/Admin'
 function App() {
    
   return (
     <>
     <Navbar/>
     <SideBar/>
-    <div className='w-full  h-screen'>
+    <div className='w-full  '>
       
       
    
@@ -22,14 +23,16 @@ function App() {
         <Route path='/checkout' element={<Checkout/>} />
         <Route path='/home' element={<Home/>} />
         <Route path='/Category' element={<Allposters/>} />
-        <Route path='/buy:' element={<Buy/>} />
-        <Route path='/oderpage' element={<Orderpage/>} />
+        <Route path='/orderPage' element={<Order/>} />
+        <Route path='/admin' element={<Admin/>} />
         
       </Routes>
       
       
-
+     
     </div>
+    <Footer/>
+    
     </>
     
     

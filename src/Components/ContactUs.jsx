@@ -3,7 +3,7 @@ import React from "react";
 
 function ContactUs() {
   return (
-    <div  className="w-full xl:h-[900px] flex flex-col gap-32   my-20 ">
+    <div className="w-full xl:h-[900px] flex flex-col gap-32   my-20 ">
       <h3 className="text-black text-center text-2xl font-bold">Contact us</h3>
       <div className="w-full xl:w-[80%] h-full mx-auto flex flex-col xl:flex-row">
         <div className="w-full xl:w-[40%] flex flex-col gap-4 xl:gap-20  text-white bg-black h-full">
@@ -69,7 +69,9 @@ function ContactUs() {
               />
             </div>
             <div className="w-full my-6 flex justify-center sm:justify-end">
-            <button className="bg-black sm:scale-100 scale-90 py-4 px-6 rounded-full text-white" >Send message</button>
+              <button className="bg-black sm:scale-100 scale-90 py-4 px-6 rounded-full text-white">
+                Send message
+              </button>
             </div>
           </form>
         </div>
