@@ -1,35 +1,17 @@
 import React, { useEffect, useState } from "react";
 import ContactUs from "../Components/ContactUs";
 import Footer from "../Components/Footer";
-import { collection, getDocs } from "firebase/firestore";
-import { app } from "../../firebase";
-import { getFirestore } from "firebase/firestore";
-
-const db = getFirestore(app);
-
+import { useContext } from "react";
+import { AppContext } from "../AppProvider";
+import Hero from "../Components/Hero";
+import { Link } from "react-router-dom";
 export default function Home() {
-  const ref = collection(db, "Poster");
-  const [posterData, setposterData] = useState([]);
-  useEffect(() => {
-    function getPosters() {
-      getDocs(ref).then((data) => {
-        const array = [];
-        
-        data.forEach((doc) => {
-          array.push({...doc.data().posterInfo, id:doc.id})
-        })
-        console.log(array);
-        setposterData(array)
-      })
-    }
-
-    getPosters();
-  }, []);
+  const {posterData} = useContext(AppContext);
+  
   return (
     <div className="relative top-32 ">
-      <ContactUs />
-      <Footer />
-      <div className="flex gap-2 bg-red-500 h-[900px] p-12">
+      <Hero/>
+      <div className="flex xs2:inline-flex xs2:overflow-x-auto   gap-2 xs2:flex-nowrap flex-wrap  px-4 md:px-12  h-fit lg:px-32">
         
         {posterData.map((data, index) => (
           <PostCard
@@ -40,17 +22,21 @@ export default function Home() {
           />
         ))}
       </div>
+      <Link className="link hover:border-[#003C43] hover:border-[2px] hover:text-[#003C43] hover:bg-white  absolute -translate-x-2/4 -translate-y-2/4 text-[white] font-[400] text-[16px]  bg-[#003C43] rounded-xl mt-14 px-8 py-3 left-2/4" to="/Category">View All</Link>
+
+      <ContactUs />
+      
     </div>
   );
 }
 
 function PostCard({ name, img, price }) {
   return (
-    <div className="w-72 h-96 bg-red-400">
-      <div className="bg-green-400">
-        <img src={img} alt="..." />
+    <div className="w-[280px] xs2:inline   h-fit mx-auto my-6 ">
+      <div className=" w-full h-[300px] object-cover ">
+        <img className="w-full h-full" src={img} alt="..." />
       </div>
-      <div className="bg-yellow-400">
+      <div className="w-full  px-4">
         <h2>{name}</h2>
         <p>{price}</p>
       </div>

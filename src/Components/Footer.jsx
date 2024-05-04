@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export function Footer() {
   return (
     <>
-      <div className="bg-main pt-24 w-full my-32      py-20 flex flex-col gap-32 justify-center items-center  text-white px-12 ">
+      <div className="bg-main pt-24 w-full mt-32      py-20 flex flex-col gap-32 justify-center items-center  text-white px-12 ">
         <div className="gap-3 md:flex items-start  md:gap-20  lg:gap-52  ">
           <div className=" text-left md:py-24 lg:py-1   md:w-1/2 h-full ">
             <h2 className="text-2xl uppercase my-8 font-bold">inkyhouse </h2>

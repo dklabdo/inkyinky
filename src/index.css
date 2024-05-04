@@ -30,7 +30,6 @@
     font-family: "Work Sans", sans-serif;
     font-optical-sizing: auto;
     scroll-behavior: smooth;
-    min-height: 6000px;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     width: 100%;
@@ -56,4 +55,12 @@
   
   
 
+}
+
+
+@media (max-width : 540px) {
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  
 }
