@@ -33,9 +33,11 @@ function AppProvider({children}) {
     getPosters();
   }, []);
 
+
     const [orderInfo,setorderInfo] = useState(null)
+    const [currentId,setcurrentId] = useState(null)
   return (
-    <AppContext.Provider value={{posterData,orderInfo,setorderInfo,ControlSideBar,openSideBar}}>
+    <AppContext.Provider value={{currentId,setcurrentId,posterData,orderInfo,setorderInfo,ControlSideBar,openSideBar}}>
         {children}
     </AppContext.Provider>
   )

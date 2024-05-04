@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ContactUs from "../Components/ContactUs";
-import Footer from "../Components/Footer";
 import { useContext } from "react";
 import { AppContext } from "../AppProvider";
 import Hero from "../Components/Hero";
+import AboutUs from "../Components/AboutUs";
+import PostCard from "../Components/PostCard";
+
 import { Link } from "react-router-dom";
 export default function Home() {
   const {posterData} = useContext(AppContext);
@@ -23,23 +25,10 @@ export default function Home() {
         ))}
       </div>
       <Link className="link hover:border-[#003C43] hover:border-[2px] hover:text-[#003C43] hover:bg-white  absolute -translate-x-2/4 -translate-y-2/4 text-[white] font-[400] text-[16px]  bg-[#003C43] rounded-xl mt-14 px-8 py-3 left-2/4" to="/Category">View All</Link>
-
+        <AboutUs/>
       <ContactUs />
       
     </div>
   );
 }
 
-function PostCard({ name, img, price }) {
-  return (
-    <div className="w-[280px] xs2:inline   h-fit mx-auto my-6 ">
-      <div className=" w-full h-[300px] object-cover ">
-        <img className="w-full h-full" src={img} alt="..." />
-      </div>
-      <div className="w-full  px-4">
-        <h2>{name}</h2>
-        <p>{price}</p>
-      </div>
-    </div>
-  );
-}

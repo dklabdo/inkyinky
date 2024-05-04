@@ -8,7 +8,7 @@ export function Navbare() {
   const navigate = useNavigate();
   const { ControlSideBar } = useContext(AppContext);
   return (
-    <nav className="fixed bg-white z-10 h-20 md:h-28">
+    <nav className="fixed bg-white  z-10 h-14 md:h-24">
       <h1
         onClick={() => navigate("/home")}
         className="cursor-pointer font-bold text-lg text-main"

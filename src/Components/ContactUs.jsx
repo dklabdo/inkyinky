@@ -3,7 +3,7 @@ import React from "react";
 
 function ContactUs() {
   return (
-    <div className="w-full xl:h-[900px] flex flex-col gap-32   my-48 ">
+    <div className="w-full xl:h-[1100px] flex flex-col gap-32   mb-48 ">
       <h3 className="text-black text-center text-2xl font-bold">Contact us</h3>
       <div className="w-full xl:w-[80%] h-full mx-auto flex flex-col xl:flex-row">
         <div className="w-full xl:w-[40%] flex flex-col gap-4 xl:gap-20  text-white bg-black h-full">

@@ -11,7 +11,7 @@ function Admin() {
     isFrame: true,
     lPrice: null,
     mPrice: null,
-    category: "",
+    category: "Cars",
   });
 
   const [url, seturl] = useState("");
