@@ -36,8 +36,10 @@ function AppProvider({children}) {
 
     const [orderInfo,setorderInfo] = useState(null)
     const [currentId,setcurrentId] = useState(null)
+    const [checkoutInfo,setcheckoutInfo] = useState(null);
+    
   return (
-    <AppContext.Provider value={{currentId,setcurrentId,posterData,orderInfo,setorderInfo,ControlSideBar,openSideBar}}>
+    <AppContext.Provider value={{checkoutInfo,setcheckoutInfo ,currentId,setcurrentId,posterData,orderInfo,setorderInfo,ControlSideBar,openSideBar}}>
         {children}
     </AppContext.Provider>
   )

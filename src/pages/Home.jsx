@@ -11,7 +11,7 @@ export default function Home() {
   const {posterData} = useContext(AppContext);
   
   return (
-    <div className="relative top-32 ">
+    <div className="relative top-24 ">
       <Hero/>
       <div className="flex xs2:inline-flex xs2:overflow-x-auto   gap-2 xs2:flex-nowrap flex-wrap  px-4 md:px-12  h-fit lg:px-32">
         
@@ -21,6 +21,7 @@ export default function Home() {
             img={data.img}
             name={data.name}
             price={data.mPrice}
+            product={data}
           />
         ))}
       </div>

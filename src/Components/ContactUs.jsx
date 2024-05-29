@@ -3,7 +3,7 @@ import React from "react";
 
 function ContactUs() {
   return (
-    <div className="w-full xl:h-[1100px] flex flex-col gap-32   mb-48 ">
+    <div id="contact" className="w-full  xl:h-[1100px] flex flex-col gap-32   mb-48 ">
       <h3 className="text-black text-center text-2xl font-bold">Contact us</h3>
       <div className="w-full xl:w-[80%] h-full mx-auto flex flex-col xl:flex-row">
         <div className="w-full xl:w-[40%] flex flex-col gap-4 xl:gap-20  text-white bg-black h-full">
@@ -12,9 +12,9 @@ function ContactUs() {
             <p className="text-base ">Say something to start a live chat!</p>
           </div>
           <div className="px-10 xs2:px-6 my-6 sm:px-16">
-            <ContactInfo icon={1} text="05468296426491" />
-            <ContactInfo icon={2} text="nkmk@gmail.com" />
-            <ContactInfo icon={3} text="f sowa t3 mok" />
+            <ContactInfo icon={1} text="0549884923" />
+            <ContactInfo icon={2} text="inkyhouse11@gmail.com" />
+            <ContactInfo icon={3} text="Sidi Bel Abesse" />
             <ContactInfo icon={4} text="inkyhouse" />
           </div>
         </div>
@@ -27,7 +27,7 @@ function ContactUs() {
                   className="contactInput"
                   id="fn"
                   type="text"
-                  placeholder="sayah"
+                  placeholder="Mhamedi"
                 />
               </div>
               <div className="inputContainer">
@@ -36,7 +36,7 @@ function ContactUs() {
                   className="contactInput"
                   id="ln"
                   type="text"
-                  placeholder="abdo"
+                  placeholder="Walid"
                 />
               </div>
             </div>
@@ -47,7 +47,7 @@ function ContactUs() {
                   className="contactInput"
                   id="email"
                   type="email"
-                  placeholder="sayah@gmail.com"
+                  placeholder="fodil@gmail.com"
                 />
               </div>
               <div className="inputContainer">
@@ -56,7 +56,7 @@ function ContactUs() {
                   className="contactInput"
                   id="phone"
                   type="number"
-                  placeholder="+699542392"
+                  placeholder="+54884923"
                 />
               </div>
             </div>

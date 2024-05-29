@@ -8,7 +8,7 @@ export function Navbare() {
   const navigate = useNavigate();
   const { ControlSideBar } = useContext(AppContext);
   return (
-    <nav className="fixed bg-white  z-10 h-14 md:h-24">
+    <nav className="fixed  bg-white  z-10 h-14 md:h-24">
       <h1
         onClick={() => navigate("/home")}
         className="cursor-pointer font-bold text-lg text-main"
@@ -16,8 +16,8 @@ export function Navbare() {
         INKYHOUSE
       </h1>
       <div className="hidden md:flex middle gap-6  lg:gap-12">
-        <Link to="/home " className="link">
-          home
+        <Link to="/ " className="link">
+          Home
         </Link>
         <Link to="/Category" className="link">
           Category
@@ -25,11 +25,11 @@ export function Navbare() {
         <a href="#contact" className="link">
           Contact Us
         </a>
-        <Link to="/AboutUs" className="link">
+        <a href="#AboutUs" className="link">
           About Us
-        </Link>
+        </a>
       </div>
-      <div className="hidden md:flex  gap-4 ">
+      <div className="hidden md:flex   gap-4 ">
         <Search size={30} />
         <ShoppingBag size={30} />
       </div>

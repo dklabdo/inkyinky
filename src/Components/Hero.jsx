@@ -3,8 +3,8 @@ import img from '../assets/test.png'
 import { Link } from 'react-router-dom'
 function Hero() {
   return (
-    <div className='w-full '>
-        <div className="w-full  h-[600px] block relative text-center mx-auto ">
+    <div className='w-full  '>
+        <div className="w-full   h-[600px] block relative text-center mx-auto ">
         <img className="w-full h-full  brightness-50" src={img} alt="ggg" />
         <h2 className="   absolute -translate-x-2/4 -translate-y-2/4 text-[white] font-medium text-[16px] left-2/4 top-[100px]">Poster Collection</h2>
         <p className="absolute -translate-x-2/4 -translate-y-2/4 text-[white] font-[400] text-[36px] left-2/4 xs2:text-[24px] top-[200px]">Transforming Walls, Inspiring Minds</p>

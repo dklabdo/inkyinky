@@ -6,7 +6,7 @@ import img3 from "../assets/img3.png";
 import { useState } from "react";
 
 function Checkout() {
-  const { orderInfo } = useContext(AppContext);
+  const {checkoutInfo, orderInfo } = useContext(AppContext);
 
   return (
     <div className=" lg:divide-x-2 lg:divide-x-reverse   divide-black/30 flex-col-reverse gap-12  relative top-24  my-32 flex items-center     lg:flex-row-reverse  ">
@@ -83,18 +83,7 @@ function Checkout() {
             </div>
 
             <div className="fn flex flex-col space-y-2">
-              <label className="text-gray-600 pl-1 text-sm" htmlFor="nb">
-                Select
-              </label>
-              <input
-                className="border border-[#003C43] p-3 text-sm font-thin rounded-full bg-transparent "
-                type="text"
-                id="nb"
-                //value={user.Selectdeliveryconpany}
-                placeholder="yalidi"
-                required
-                //onChange={data}
-              />
+              
             </div>
           </form>
         </div>
@@ -104,19 +93,19 @@ function Checkout() {
         <div className="mb-12 text-lg pl-2">Receape details:</div>
         <section className=" ">
           {" "}
-          <img src={img2} className="w-52" />
+          <img src={checkoutInfo.img} className="w-52" />
         </section>
         <div className="px-4 flex flex-col gap-2">
           <p>
             {" "}
-            <span>Title: </span> <span>{orderInfo.PosterName}</span>{" "}
+            <span>Title: </span> <span>{checkoutInfo.PosterName}</span>{" "}
           </p>
           <p>
-            <span>SIZE:</span> <span>{orderInfo.Size}</span>{" "}
+            <span>SIZE:</span> <span>{checkoutInfo.Size}</span>{" "}
           </p>
           <p>
             <span>FRAME:</span>{" "}
-            <span>{orderInfo.withFrame ? "With frame" : "Without frame"}</span>{" "}
+            <span>{checkoutInfo.withFrame ? 'with frame' : 'without frame'}</span>{" "}
           </p>
         </div>
 
@@ -125,7 +114,7 @@ function Checkout() {
             Confirm Order
           </button>
           <div className="w-fit text-md font-semibold ">
-            price: {orderInfo.Price}{" "}
+            price: {checkoutInfo.Price}{" "}
           </div>
         </div>
       </div>

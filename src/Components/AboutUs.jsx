@@ -3,7 +3,7 @@ import poster3d from "../assets/poster3d.png"
 import tata from "../assets/tata.png"
 function AboutUs() {
   return (
-    <div className="flex items-center flex-col py-32  ">
+    <div id='AboutUs' className="flex items-center flex-col py-32  ">
       <h2 className="font-bold text-xl py-5 ">ABOUT US</h2>
       <div className="  items-center ">
         <div className=" lg:flex flex-row md:py-32  ">
@@ -40,9 +40,9 @@ function AboutUs() {
               artist.
             </p>
           </div>
-          <div className=" lg:w-fit xl:w-1/4 ">
+          <div className=" w-full md:w-fit xl:w-fit 2xl:w-1/4 ">
             <img
-              className=" md:px-64 lg:px-0 md:scale-110 lg:scale-125"
+              className=" scale-75    w-full  lg:px-0 md:scale-110 lg:scale-125"
               src={tata}
             />
           </div>
