@@ -33,14 +33,13 @@ function Allposters() {
           content="Others"
         />
       </div>
-      <div className="flex h-fit xs2:inline-flex xs2:overflow-x-auto   gap-2 xs2:flex-nowrap flex-wrap  px-4 md:px-12  h-fit lg:px-32" >
+      <div className="flex  xs2:inline-flex xs2:overflow-x-auto overflow-x-auto  gap-2 xs2:flex-nowrap flex-wrap  px-4 md:px-12  h-fit lg:px-32" >
         {posterData.map((data,index) => {
           return(
            getCategory(data.category) &&  <PostCard
            key={index}
-           img={data.img}
-           name={data.name}
-           price={data.mPrice}
+          
+           product={data}
          />
           );
         })}

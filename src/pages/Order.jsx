@@ -57,6 +57,24 @@ export default function Order() {
     console.log(paymentInfo);
   } , [frame,size])
 
+  function handleAddToCart(){
+    const cartData = [];
+    if(window.localStorage.getItem('cart') == null){
+        cartData.push(paymentInfo)
+        window.localStorage.setItem('cart' , JSON.stringify(cartData) )
+    }
+    else{
+      const cartData = JSON.parse(window.localStorage.getItem('cart'))
+      console.log(cartData);
+      cartData.push(paymentInfo)
+      window.localStorage.setItem('cart' , JSON.stringify(cartData))
+      
+      
+      
+    }
+
+  }
+
   
   
 
@@ -83,7 +101,7 @@ export default function Order() {
             <h2> {name} </h2>
           </div>
           <div className="text-nowrap hidden xl:block text-lg  ">
-            <p> price : {mPrice} </p>
+            <p> price : {paymentInfo.Price} </p>
           </div>
           <p className="text-base font-bold">size :</p>
           <div className="flex flex-row gap-4  my-4">
@@ -136,7 +154,7 @@ export default function Order() {
             </button>
             
           </div>
-          <button className="bg-main py-3   rounded-3xl w-full  text-white font-bold border-black border-[1px] ">
+          <button onClick={() => handleAddToCart()} className="bg-main py-3   rounded-3xl w-full  text-white font-bold border-black border-[1px] ">
             {" "}
             add to cart{" "}
           </button>

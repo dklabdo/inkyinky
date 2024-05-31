@@ -1,28 +1,60 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AppContext } from "../AppProvider";
 import { useContext } from "react";
 import img2 from "../assets/img2.png";
 import img3 from "../assets/img3.png";
 import { useState } from "react";
+import { getFirestore } from "firebase/firestore";
+import { app } from "../../firebase";
+import { doc, setDoc } from "firebase/firestore"; 
+const db = getFirestore(app);
+
 
 function Checkout() {
   const {checkoutInfo, orderInfo } = useContext(AppContext);
+  const [clientInfo,setclientInfo] = useState({
+    name : "",
+    willaya : "",
+    mail : "",
+    adresse : "",
+    phoneNumber : ""
+  })
+  function hadnleChange(e){
+    const {name,value} = e.target;
+    setclientInfo({...clientInfo, [name] : value});
+  }
+
+  async function handleBuy(e){
+    e.preventDefault();
+   
+    const res = await setDoc(doc(db, "Orders", clientInfo.phoneNumber), {
+      checkoutInfo,
+      clientInfo
+    });
+
+    console.log(res);
+
+  }
+
+  
 
   return (
     <div className=" lg:divide-x-2 lg:divide-x-reverse   divide-black/30 flex-col-reverse gap-12  relative top-24  my-32 flex items-center     lg:flex-row-reverse  ">
       <div className="     h-full w-full lg:w-[60%] flex flex-col  ">
         <h2 className="mb-12 pl-8 text-lg">Write down your information</h2>
         <div className="  h-full  px-8  ">
-          <form className="checkoutform space-y-2 ">
-            <div className="flex gap-3 ">
+          <form onSubmit={(e) => handleBuy(e)} method="POST" className="checkoutform space-y-2 ">
+            <div className="flex md:flex-row flex-col gap-3 ">
               <div className="fn flex flex-col space-y-2 w-full ">
-                <label className=" text-gray-600 text-sm pl-1" htmlFor="fn">
+                <label  className=" text-gray-600 text-sm pl-1" htmlFor="fn">
                   Full Name
                 </label>
                 <input
                   className="border border-[#003C43]  p-3 text-sm font-thin rounded-full bg-transparent  "
                   type="text"
                   id="fn"
+                  name="name"
+                  onChange={(e) => hadnleChange(e)}
                   //value={user.FullName}
                   placeholder="ahmed naser"
                   //onChange={data}
@@ -36,6 +68,8 @@ function Checkout() {
                   className="border border-[#003C43] p-3 text-sm font-thin rounded-full bg-transparent "
                   type="text"
                   id="wl"
+                  name="willaya"
+                  onChange={(e) => hadnleChange(e)}
                   //value={user.Willaya}
                   placeholder="enter your willaya"
                   //onChange={data}
@@ -50,6 +84,8 @@ function Checkout() {
                 className="border border-[#003C43] p-3 text-sm font-thin rounded-full bg-transparent "
                 type="Email"
                 id="em"
+                name="mail"
+                onChange={(e) => hadnleChange(e)}
                 //value={user.Email}
                 placeholder="enter your email"
                 // onChange={data}
@@ -63,6 +99,8 @@ function Checkout() {
                 className=" border border-[#003C43] p-3 text-sm font-thin rounded-full bg-transparent "
                 type="text"
                 id="ad"
+                name="adresse"
+                onChange={(e) => hadnleChange(e)}
                 //value={user.Address}
                 placeholder="enter your addres"
                 //onChange={data}
@@ -76,10 +114,17 @@ function Checkout() {
                 className="border border-[#003C43] p-3 text-sm font-thin rounded-full bg-transparent "
                 type="number"
                 id="nb"
+                name="phoneNumber"
+                onChange={(e) => hadnleChange(e)}
                 //value={user.Phonenumber}
                 placeholder="enter your phone number"
                 //onChange={data}
               />
+            </div>
+            <div className="">
+            <button type="submit" className="bg-[#003C43] w-full px-8 py-2 my-4   rounded-full text-white  ">
+            Confirm Order
+            </button>
             </div>
 
             <div className="fn flex flex-col space-y-2">
@@ -88,38 +133,45 @@ function Checkout() {
           </form>
         </div>
       </div>
+      <BuyProduct name={checkoutInfo.PosterName} img={checkoutInfo.img} size={checkoutInfo.Size} frame={checkoutInfo.withFrame} price={checkoutInfo.Price}  />
 
-      <div className="w-full   lg:w-[50%]  px-12">
+      
+    </div>
+  );
+}
+
+
+function BuyProduct({img,name,size,frame,price}){
+  return(
+    <div className="w-full   lg:w-[50%]  px-12">
         <div className="mb-12 text-lg pl-2">Receape details:</div>
         <section className=" ">
           {" "}
-          <img src={checkoutInfo.img} className="w-52" />
+          <img src={img} className="w-52" />
         </section>
         <div className="px-4 flex flex-col gap-2">
           <p>
             {" "}
-            <span>Title: </span> <span>{checkoutInfo.PosterName}</span>{" "}
+            <span>Title: </span> <span>{name}</span>{" "}
           </p>
           <p>
-            <span>SIZE:</span> <span>{checkoutInfo.Size}</span>{" "}
+            <span>SIZE:</span> <span>{size}</span>{" "}
           </p>
           <p>
             <span>FRAME:</span>{" "}
-            <span>{checkoutInfo.withFrame ? 'with frame' : 'without frame'}</span>{" "}
+            <span>{frame ? 'with frame' : 'without frame'}</span>{" "}
           </p>
         </div>
 
         <div className=" justify-between items-center px-2 my-8  flex flex-row ">
-          <button className="bg-[#003C43] w-fit px-8 py-2  rounded-full text-white  ">
-            Confirm Order
-          </button>
-          <div className="w-fit text-md font-semibold ">
-            price: {checkoutInfo.Price}{" "}
+          
+          <div className="w-fit text-md font-semibold flex gap-2">
+            <span className="mr-2 font-bold text-lg text-main">Total :</span>
+             {price}{" "}
           </div>
         </div>
       </div>
-    </div>
-  );
+  )
 }
 
 export default Checkout;
