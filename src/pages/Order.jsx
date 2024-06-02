@@ -90,7 +90,7 @@ export default function Order() {
           <h2>{name} </h2>
         </div>
         <div className="text-nowrap xl:hidden  w-full  text-lg pb-4 ">
-          <p> price : {paymentInfo.Price} </p>
+          <p> price : {paymentInfo.Price}DA </p>
         </div>
         <div className=" w-full xl:px-16   xl:w-1/2 flex flex-col ">
           <div className="h-[75%]  flex justify-center xl:justify-start items-center ">
@@ -106,7 +106,7 @@ export default function Order() {
             <h2> {name} </h2>
           </div>
           <div className="text-nowrap hidden xl:block text-lg  ">
-            <p> price : {paymentInfo.Price} </p>
+            <p> price : {paymentInfo.Price}DA </p>
           </div>
           <p className="text-base font-bold">size :</p>
           <div className="flex flex-row gap-4  my-4">

@@ -8,48 +8,41 @@ export function Footer() {
           <div className=" text-left md:py-24 lg:py-1   md:w-1/2 h-full ">
             <h2 className="text-2xl uppercase my-8 font-bold">inkyhouse </h2>
             <p className="text-xs">
-              At ARTPILLAR, we offer professional painting services for
-              restaurants, homes, offices, and more. Our experienced team of
-              painters is dedicated to delivering exceptional results with
-              attention to detail and superior craftsmanship. Whether you're
-              looking to refresh the interior of your restaurant, enhance the
-              curb appeal of your home, or update the look of your office space,
-              we've got you covered.{" "}
+            At INKYHOUSE we believe that your living or working space should reflect who you are and what you love. 
+            That's why we curate a diverse selection of posters that cater to various styles, tastes, and interests. Whether you're a fan of minimalist designs,
+             nature enthusiasts, or pop culture aficionados, we have something for everyone.{" "}
             </p>
           </div>
           <div className="pt-20 md:pt-0 flex flex-col lg:flex-row  gap-20 ">
             <div className="flex gap-20 md:w-1/2">
               <div className=" flex flex-col  text-left   w-1/3">
                 <h3 className="font-bold text-lg my-4">navigation </h3>
-                <a className="text-base font-thin my-1 " href="">
-                  service{" "}
+                <Link className="text-base font-thin my-1 " to="/home">
+                    Home{" "}
+                </Link>
+                <Link className="text-base font-thin my-1 " to="/Category">
+                  Category{" "}
+                </Link>
+                <a className="text-base font-thin my-1 " href="/#AboutUs">
+                  aboutus{" "}
                 </a>
-                <a className="text-base font-thin my-1 " href="">
-                  Agency{" "}
+                <a className="text-base font-thin my-1 " href="/#contact">
+                  Contactus{" "}
                 </a>
-                <a className="text-base font-thin my-1 " href="">
-                  Resource{" "}
-                </a>
-                <a className="text-base font-thin my-1 " href="">
-                  Contact{" "}
-                </a>
-                <a className="text-base font-thin my-1 " href="">
-                  FAQs{" "}
-                </a>
+                <Link className="text-base font-thin my-1 " to="/admin">
+                  Admin{" "}
+                </Link>
               </div>
               <div className="flex flex-col  text-left  w-1/3">
                 <h3 className="font-bold text-lg my-4">Licences </h3>
                 <a
                   className="text-base font-thin my-1 "
-                  href="https://www.youtube.com/watch?v=-5sl8aPMtmE&list=RDvRQb_-mRcAc&index=17"
+                  href=""
                 >
                   Privacy Policy{" "}
                 </a>
                 <a className="text-base font-thin my-1 " href="">
                   Copyright{" "}
-                </a>
-                <a className="text-base font-thin my-1 " href="">
-                  Email Address{" "}
                 </a>
               </div>
             </div>

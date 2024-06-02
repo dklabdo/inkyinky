@@ -36,10 +36,10 @@ export function Navbare() {
         <Link to="/Category" className="link">
           Category
         </Link>
-        <a href="#contact" className="link">
+        <a href="/#contact" className="link">
           Contact Us
         </a>
-        <a href="#AboutUs" className="link">
+        <a href="/#AboutUs" className="link">
           About Us
         </a>
       </div>

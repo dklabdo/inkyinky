@@ -10,7 +10,7 @@ function AboutUs() {
           <div className=" xl:w-1/2   ">
             <img src={poster3d} className=" " />
           </div>
-          <div className="   lg:w-1/2 md:py-16  px-6 md:px-14 ">
+          <div className="lg:w-1/2 md:py-16  px-6 md:px-14 ">
             <p className="md:text-lg py-9 md:py-28">
               {" "}
               Welcome to InkyHouse, your gateway to a world of artistic
@@ -28,7 +28,7 @@ function AboutUs() {
               {" "}
               our vision{" "}
             </h3>
-            <p className="  py-5 md:py-16  md:text-lg xl:px-14 ">
+            <p className="  py-3 md:py-14  md:text-lg xl:px-14 ">
               {" "}
               At InkyHouse, we envision a world where every wall tells a story,
               every space ignites imagination, and every individual finds their
@@ -40,9 +40,9 @@ function AboutUs() {
               artist.
             </p>
           </div>
-          <div className=" w-full md:w-fit xl:w-fit 2xl:w-1/4 ">
+          <div className=" flex w-full  justify-center ">
             <img
-              className=" scale-75    w-full  lg:px-0 md:scale-110 lg:scale-125"
+              className="flex items-center w-fit  sm:scale-90 xs:scale-75 "
               src={tata}
             />
           </div>

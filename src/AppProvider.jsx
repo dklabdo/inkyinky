@@ -16,7 +16,9 @@ function AppProvider({children}) {
     }
 
     const ref = collection(db, "Poster");
+    const ref2 = collection(db, "Orders");
   const [posterData, setposterData] = useState([]);
+  const [oderData, setoderData] = useState([]);
   useEffect(() => {
     function getPosters() {
       getDocs(ref).then((data) => {
@@ -34,13 +36,35 @@ function AppProvider({children}) {
   }, []);
 
 
+
+  useEffect(() => {
+    function getOrders() {
+      getDocs(ref2).then((data) => {
+        const array = [];
+        
+        data.forEach((doc) => {
+          array.push({...doc.data().posterInfo, id:doc.id})
+        })
+        console.log(array);
+        setoderData(array)
+      })
+    }
+
+    getOrders();
+  }, []);
+
+
+
     const [orderInfo,setorderInfo] = useState('')
     const [currentId,setcurrentId] = useState('')
     const [checkoutInfo,setcheckoutInfo] = useState('');
     const [openPanier,setopenPanier] = useState(false);
+
+    const [panier,setpanier] = useState(false);
+
     
   return (
-    <AppContext.Provider value={{openPanier,setopenPanier , checkoutInfo,setcheckoutInfo ,currentId,setcurrentId,posterData,orderInfo,setorderInfo,ControlSideBar,openSideBar}}>
+    <AppContext.Provider value={{ panier,setpanier, openPanier,setopenPanier , checkoutInfo,setcheckoutInfo ,currentId,setcurrentId,posterData,orderInfo,setorderInfo,ControlSideBar,openSideBar}}>
         {children}
     </AppContext.Provider>
   )

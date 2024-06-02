@@ -17,7 +17,7 @@ function PostCard({ product }) {
         </div>
         <div className="w-full  px-4">
           <h2>{name}</h2>
-          <p>{mPrice}</p>
+          <p>{mPrice}DA</p>
         </div>
       </div>
     );
