@@ -7,11 +7,21 @@ import { useState } from "react";
 import { getFirestore } from "firebase/firestore";
 import { app } from "../../firebase";
 import { doc, setDoc } from "firebase/firestore"; 
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 const db = getFirestore(app);
 
 
 function Checkout() {
-  const {checkoutInfo, orderInfo } = useContext(AppContext);
+  const navigate = useNavigate()
+  const {checkoutInfo } = useContext(AppContext);
+  console.log(checkoutInfo);
+  useEffect(() => {
+    if(checkoutInfo == ''){
+      console.log('test');
+      navigate('/')
+    }
+  } , [])
   const [clientInfo,setclientInfo] = useState({
     name : "",
     willaya : "",
@@ -19,6 +29,7 @@ function Checkout() {
     adresse : "",
     phoneNumber : ""
   })
+  
   function hadnleChange(e){
     const {name,value} = e.target;
     setclientInfo({...clientInfo, [name] : value});
@@ -30,7 +41,18 @@ function Checkout() {
     const res = await setDoc(doc(db, "Orders", clientInfo.phoneNumber), {
       checkoutInfo,
       clientInfo
-    });
+    }).then(() => {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Commande envoyer avec succes",
+        showConfirmButton: false,
+        timer: 2000
+      }).then(() => {
+        navigate('/')
+
+      })
+    })
 
     console.log(res);
 

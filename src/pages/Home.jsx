@@ -8,12 +8,12 @@ import PostCard from "../Components/PostCard";
 
 import { Link } from "react-router-dom";
 export default function Home() {
-  const {posterData} = useContext(AppContext);
+  const {posterData } = useContext(AppContext);
   
   return (
-    <div className="relative top-24 ">
+    <div className={`relative top-20 overflow-y-auto`} >
       <Hero/>
-      <div className="flex xs2:inline-flex xs2:overflow-x-auto   gap-2 xs2:flex-nowrap flex-wrap  px-4 md:px-12  h-fit lg:px-32">
+      <div className="flex xs2:inline-flex xs2:overflow-x-auto w-full mt-28  gap-2 xs2:flex-nowrap flex-wrap  px-4 md:px-12  h-fit lg:px-32">
         
         {posterData.map((data, index) => (
           <PostCard

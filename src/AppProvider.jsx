@@ -34,12 +34,13 @@ function AppProvider({children}) {
   }, []);
 
 
-    const [orderInfo,setorderInfo] = useState(null)
-    const [currentId,setcurrentId] = useState(null)
-    const [checkoutInfo,setcheckoutInfo] = useState(null);
+    const [orderInfo,setorderInfo] = useState('')
+    const [currentId,setcurrentId] = useState('')
+    const [checkoutInfo,setcheckoutInfo] = useState('');
+    const [openPanier,setopenPanier] = useState(false);
     
   return (
-    <AppContext.Provider value={{checkoutInfo,setcheckoutInfo ,currentId,setcurrentId,posterData,orderInfo,setorderInfo,ControlSideBar,openSideBar}}>
+    <AppContext.Provider value={{openPanier,setopenPanier , checkoutInfo,setcheckoutInfo ,currentId,setcurrentId,posterData,orderInfo,setorderInfo,ControlSideBar,openSideBar}}>
         {children}
     </AppContext.Provider>
   )

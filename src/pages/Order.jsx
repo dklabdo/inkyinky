@@ -6,11 +6,16 @@ import img1 from "../assets/img1.png";
 import img2 from "../assets/img2.png";
 import img3 from "../assets/img3.png";
 export default function Order() {
+
   const navigate = useNavigate();
   const {setcheckoutInfo, orderInfo } = useContext(AppContext);
   const { name, img, mPrice, lPrice } = orderInfo;
   const [frame, setFrame] = useState(true);
   const [size, setSize] = useState("M");
+  if(orderInfo == ''){
+    console.log('test');
+    navigate('/')
+  }
   function handleBuy() {
 
 

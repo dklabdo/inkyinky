@@ -11,7 +11,7 @@ function PostCard({ product }) {
         navigate('/orderPage')
     }
     return (
-      <div onClick={()=>handleBuyPoster()}  className="w-[280px] xs2:inline red  h-fit mx-auto my-6 ">
+      <div onClick={()=>handleBuyPoster()}  className="min-w-[260px] xs2:inline red  h-fit mx-auto my-6 ">
         <div className=" w-full h-[300px]  object-cover ">
           <img className="w-full rounded-xl  h-full" src={img} alt="..." />
         </div>

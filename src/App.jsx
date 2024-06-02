@@ -9,24 +9,29 @@ import SideBar from './Components/SideBar'
 import Footer from './Components/Footer'
 import Order from './pages/Order'
 import Admin from './pages/Admin'
+import Panier from './Components/Panier'
+import { useContext } from "react";
+import { AppContext } from './AppProvider'
 function App() {
+  const {openPanier} = useContext(AppContext)
+
    
   return (
-    <>
+    <div className={`h-screen w-full ${openPanier && 'overflow-y-hidden'}`} >
     <Navbar/>
     <SideBar/>
-    <div className='w-full  '>
+    <div className='w-full'>
       
       
    
       <Routes>
         
-        <Route path='/checkout' element={<Checkout/>} />
-        <Route path='/home' element={<Home/>} />
-        <Route path='/' element={<Home/>} />
-        <Route path='/Category' element={<Allposters/>} />
-        <Route path='/orderPage' element={<Order/>} />
-        <Route path='/admin' element={<Admin/>} />
+        <Route path='/checkout' element={<><Checkout/> <Panier/></> } />
+        <Route path='/home' element={<><Home/><Panier/></>} />
+        <Route path='/' element={<><Home/><Panier/></>} />
+        <Route path='/Category' element={<><Allposters/><Panier/></>} />
+        <Route path='/orderPage' element={<><Order/><Panier/></>} />
+        <Route path='/admin' element={<><Admin/><Panier/></>} />
         
       </Routes>
       
@@ -35,7 +40,7 @@ function App() {
     </div>
     <Footer/>
     
-    </>
+    </div>
     
     
   ); }
