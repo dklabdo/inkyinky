@@ -14,7 +14,7 @@ const db = getFirestore(app);
 
 function Checkout() {
   const navigate = useNavigate();
-  const ChartInfo = JSON.parse(window.localStorage.getItem("cart"));
+  const ChartInfo = JSON.parse(window.localStorage.getItem("cart"))
   console.log(ChartInfo);
   const { checkoutInfo, panier } = useContext(AppContext);
   console.log(checkoutInfo);
@@ -39,13 +39,15 @@ function Checkout() {
 
   async function handleBuy(e) {
     e.preventDefault();
-    const toSend = {
-      panier: panier ? ChartInfo : checkoutInfo,
-      client: clientInfo,
-    };
+    const posters = ChartInfo.map(({ img, ...rest }) => rest);
+    
+    
 
     const res = await setDoc(doc(db, "Orders", clientInfo.phoneNumber), {
-      toSend,
+      
+        panier: panier ? posters : checkoutInfo,
+        client: clientInfo,
+      
     }).then(() => {
       Swal.fire({
         position: "center",
@@ -161,7 +163,7 @@ function Checkout() {
           </form>
         </div>
       </div>
-      <div className="flex flex-col w-[40%] ">
+      <div className="flex overflow-x-auto flex-col w-full lg:w-[40%] ">
         <h1 className="my-6 pl-8 text-lg font-medium  ">Recap details</h1>
         {panier ? (
           <DisplayPanier data={ChartInfo} />

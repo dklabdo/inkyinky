@@ -23,6 +23,7 @@ function Panier() {
   }
 
   function confirmPanier(){
+    setopenPanier(false)
     setpanier(true)
     navigate('/checkout')
 

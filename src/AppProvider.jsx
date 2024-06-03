@@ -41,9 +41,12 @@ function AppProvider({children}) {
     function getOrders() {
       getDocs(ref2).then((data) => {
         const array = [];
+        console.log(data);
         
         data.forEach((doc) => {
-          array.push({...doc.data().posterInfo, id:doc.id})
+          
+          
+          array.push({...doc.data(), id:doc.id})
         })
         console.log(array);
         setoderData(array)
@@ -64,7 +67,7 @@ function AppProvider({children}) {
 
     
   return (
-    <AppContext.Provider value={{ panier,setpanier, openPanier,setopenPanier , checkoutInfo,setcheckoutInfo ,currentId,setcurrentId,posterData,orderInfo,setorderInfo,ControlSideBar,openSideBar}}>
+    <AppContext.Provider value={{oderData, panier,setpanier, openPanier,setopenPanier , checkoutInfo,setcheckoutInfo ,currentId,setcurrentId,posterData,orderInfo,setorderInfo,ControlSideBar,openSideBar}}>
         {children}
     </AppContext.Provider>
   )

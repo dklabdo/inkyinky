@@ -18,7 +18,7 @@ function App() {
    
   return (
     <div className={`h-screen w-full ${openPanier && 'overflow-y-hidden'}`} >
-    <Navbar/>
+    
     <SideBar/>
     <div className='w-full'>
       
@@ -26,11 +26,11 @@ function App() {
    
       <Routes>
         
-        <Route path='/checkout' element={<><Checkout/> <Panier/></> } />
-        <Route path='/home' element={<><Home/><Panier/></>} />
-        <Route path='/' element={<><Home/><Panier/></>} />
-        <Route path='/Category' element={<><Allposters/><Panier/></>} />
-        <Route path='/orderPage' element={<><Order/><Panier/></>} />
+        <Route path='/checkout' element={<><Navbar/><Checkout/> <Panier/><Footer/></> } />
+        <Route path='/home' element={<><Navbar/><Home/><Panier/><Footer/></>} />
+        <Route path='/' element={<><Navbar/><Home/><Panier/><Footer/></>} />
+        <Route path='/Category' element={<><Navbar/><Allposters/><Panier/><Footer/></>} />
+        <Route path='/orderPage' element={<><Navbar/><Order/><Panier/><Footer/></>} />
         <Route path='/admin' element={<><Admin/><Panier/></>} />
         
       </Routes>
@@ -38,7 +38,7 @@ function App() {
       
      
     </div>
-    <Footer/>
+    
     
     </div>
     
