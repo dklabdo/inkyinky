@@ -62,6 +62,8 @@ export function Footer() {
           </div>
         </div>
         <p className="font-extralight text-nowrap">
+          developed by sayah abdel-ilah 
+          <br/>
           all right reserved for inkyhouse 2023 &copy;{" "}
         </p>
       </div>
